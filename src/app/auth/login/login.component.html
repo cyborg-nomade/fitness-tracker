@@ -1,21 +1,54 @@
 <section class="signup-form">
-  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="loginForm"
-    (ngSubmit)="onSubmit()">
-
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
     <mat-form-field>
-      <input type="email" matInput placeholder="Your email" formControlName="email" />
-      <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required">Field must not be
-        empty</mat-error>
-      <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.email">E-Mail is invalid.
+      <input
+        type="email"
+        matInput
+        placeholder="Your email"
+        formControlName="email"
+      />
+      <mat-error
+        *ngIf="
+          email.invalid &&
+          (email.dirty || email.touched) &&
+          email.errors.required
+        "
+        >Field must not be empty</mat-error
+      >
+      <mat-error
+        *ngIf="
+          email.invalid && (email.dirty || email.touched) && email.errors.email
+        "
+        >E-Mail is invalid.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field hintLabel="Should be at least 6 characters long.">
-      <input type="password" matInput placeholder="Your password" formControlName="password"  />
+      <input
+        type="password"
+        matInput
+        placeholder="Your password"
+        formControlName="password"
+      />
       <mat-hint align="end"> {{ password.value?.length }} / 6</mat-hint>
       <mat-error>Has to be at least 6 characters</mat-error>
     </mat-form-field>
 
-    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+    <button
+      *ngIf="!isLoading"
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+    <mat-spinner *ngIf="isLoading" diameter="50"></mat-spinner>
   </form>
 </section>
