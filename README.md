@@ -2,6 +2,11 @@
 
 This project intends to create a Fitness Tracker using Angular 8 and Angular Material, to be used both in desktop and mobile devices.
 
-# Version 0.1 Changelog:
+# Version 1.0 Changelog:
 
-Signup Screen added, still not functional.
+App is now fully functional. Features:
+
+- Signup with easy steps;
+- Login to be able to track your avalable exercises;
+- Check past tranings with sorting and filter functions;
+- Cancel tranings at anytime;
