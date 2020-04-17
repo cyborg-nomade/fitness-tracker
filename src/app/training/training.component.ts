@@ -5,7 +5,7 @@ import { TrainingService } from './training.service';
 @Component({
   selector: 'app-training',
   templateUrl: './training.component.html',
-  styleUrls: ['./training.component.scss']
+  styleUrls: ['./training.component.scss'],
 })
 export class TrainingComponent implements OnInit, OnDestroy {
   ongoingTraining = false;
@@ -15,14 +15,10 @@ export class TrainingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.exerciseSubscription = this.trainingService.exerciseChanged.subscribe(
-      exercise => {
+      (exercise) => {
         if (exercise) {
-          console.log(this.ongoingTraining);
-
           this.ongoingTraining = true;
         } else {
-          console.log(this.ongoingTraining);
-
           this.ongoingTraining = false;
         }
       }
