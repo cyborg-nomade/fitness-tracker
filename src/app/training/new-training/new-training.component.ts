@@ -1,9 +1,11 @@
-import { UIService } from './../../shared/ui.service';
 import { NgForm } from '@angular/forms';
-import { Exercise } from './../exercise.model';
-import { TrainingService } from './../training.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+
+import { Exercise } from './../exercise.model';
+
+import { UIService } from './../../shared/ui.service';
+import { TrainingService } from './../training.service';
 
 @Component({
   selector: 'app-new-training',

@@ -7,7 +7,9 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+
 import { Exercise } from '../exercise.model';
+
 import { TrainingService } from '../training.service';
 
 @Component({
