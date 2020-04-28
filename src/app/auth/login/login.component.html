@@ -41,7 +41,7 @@
     </mat-form-field>
 
     <button
-      *ngIf="!isLoading"
+      *ngIf="!(isLoading$ | async)"
       type="submit"
       mat-raised-button
       color="primary"
@@ -49,6 +49,6 @@
     >
       Login
     </button>
-    <mat-spinner *ngIf="isLoading" diameter="50"></mat-spinner>
+    <mat-spinner *ngIf="isLoading$ | async" diameter="50"></mat-spinner>
   </form>
 </section>
