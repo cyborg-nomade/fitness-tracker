@@ -1,5 +1,5 @@
+import { TrainingRoutingModule } from './training-routing.module';
 import { NgModule } from '@angular/core';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { SharedModule } from './../shared/shared.module';
 
@@ -17,7 +17,7 @@ import { StopTrainingComponent } from './current-training/stop-training.componen
     PastTrainingsComponent,
     StopTrainingComponent,
   ],
-  imports: [AngularFirestoreModule, SharedModule],
+  imports: [SharedModule, TrainingRoutingModule],
   exports: [],
   providers: [],
   entryComponents: [StopTrainingComponent],
