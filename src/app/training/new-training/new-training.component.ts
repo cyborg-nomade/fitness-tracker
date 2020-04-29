@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 
-import { getIsLoading } from './../../shared/ui.reducer';
+import * as fromRoot from '../../app.reducer';
 import { Exercise } from './../exercise.model';
 import { TrainingService } from './../training.service';
 
@@ -18,10 +18,13 @@ export class NewTrainingComponent implements OnInit, OnDestroy {
 
   private exerciseSubscription: Subscription;
 
-  constructor(private trainingService: TrainingService, private store: Store) {}
+  constructor(
+    private trainingService: TrainingService,
+    private store: Store<fromRoot.State>
+  ) {}
 
   ngOnInit() {
-    this.isLoading$ = this.store.select(getIsLoading);
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
     // this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
     //   (isLoading) => {
     //     this.isLoading = isLoading;

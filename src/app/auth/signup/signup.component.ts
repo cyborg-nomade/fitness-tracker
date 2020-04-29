@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { getIsLoading } from './../../shared/ui.reducer';
+import * as fromRoot from '../../app.reducer';
 import { AuthService } from './../auth.service';
 
 @Component({
@@ -15,10 +15,13 @@ export class SignupComponent implements OnInit {
   maxDate: Date;
   isLoading$: Observable<boolean>;
 
-  constructor(private authService: AuthService, private store: Store) {}
+  constructor(
+    private authService: AuthService,
+    private store: Store<fromRoot.State>
+  ) {}
 
   ngOnInit() {
-    this.isLoading$ = this.store.select(getIsLoading);
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
 
     // this.loadingSub = this.uiService.loadingStateChanged.subscribe(
     //   (isLoading) => {
