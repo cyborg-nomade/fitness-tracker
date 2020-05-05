@@ -3,7 +3,7 @@ import * as fromRoot from '../../app.reducer';
 
 import { Store } from '@ngrx/store';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Subscription, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +13,6 @@ import { Subscription, Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
   @Output() sidenavToggle = new EventEmitter<void>();
   isAuth$: Observable<boolean>;
-  authSubscription: Subscription;
 
   constructor(
     private store: Store<fromRoot.State>,

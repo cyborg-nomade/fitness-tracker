@@ -1,11 +1,11 @@
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { take } from 'rxjs/operators';
 
 import { TrainingService } from './../training.service';
 import { StopTrainingComponent } from './stop-training.component';
 import * as fromTraining from '../training.reducer';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-current-training',
